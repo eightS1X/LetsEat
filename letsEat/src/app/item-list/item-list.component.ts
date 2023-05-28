@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent {
-  items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  items: string[] = [];
   inputData: string = "";
 
   onClick() {
