@@ -7,6 +7,18 @@
             <input type="text" [(ngModel)]="inputData" placeholder="Enter a restaurant" class="input-field">
             <button (click)="onClick()" class="rounded-button">Add</button>
         </div>
-
+    </div>
+    <div class="card">
+        <span>Let's eat at: </span>
+        <br>
+        <br>
+        <br>
+        <span>{{chosenRestaurant}}</span>
+        <br>
+        <br>
+        <br>
+        <div>
+            <button (click)="tellMeWhereToEat()" class="rounded-button">Decide for me!</button>
+        </div>
     </div>
 </div>

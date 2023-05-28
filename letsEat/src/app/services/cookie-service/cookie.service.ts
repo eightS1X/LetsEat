@@ -37,7 +37,7 @@ export class CookieService {
   }
 
   saveDataToCookie(cookieName: string, cookieValue: string){
-    document.cookie = cookieName + "=" + cookieValue;
+    document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 7 Sept 2023 12:00:00 UTC";
   }
 
 }

@@ -25,7 +25,7 @@ $breakpoint-desktop: 1024px;
 
         @media (min-width: $breakpoint-mobile) {
             width: 90%;
-            margin: 0 auto;
+            margin: 0 auto 20px;
         }
 
         @media (min-width: $breakpoint-tablet) {
@@ -51,6 +51,7 @@ $breakpoint-desktop: 1024px;
     }
 
     .rounded-button {
+        transition: transform 0.2s ease;
         border-radius: 5px;
         padding: 10px 20px;
         background-color: #337ab7;
@@ -58,5 +59,13 @@ $breakpoint-desktop: 1024px;
         border: none;
         cursor: pointer;
     }
+
+    .rounded-button:hover {
+        transform: scale(1.1);
+      }
+      
+      .rounded-button:active {
+        transform: scale(0.9);
+      }
 
 }

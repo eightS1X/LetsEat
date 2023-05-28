@@ -9,20 +9,30 @@ import { CookieService } from '../../services/cookie-service/cookie.service';
 export class ItemListComponent {
   items: string[] = [];
   inputData: string = "";
+  chosenRestaurant: string = "";
 
-  constructor(private cookieService: CookieService) {}
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit() {
-    if (this.cookieService.checkCookieExists("restaurants")){
+    if (this.cookieService.checkCookieExists("restaurants")) {
       this.items = this.cookieService.getCookie("restaurants").split(",");
-    } 
+    }
   }
 
   onClick() {
-    this.items.push(this.inputData);
-    const delimitedString = this.items.join(', ');
-    this.cookieService.saveDataToCookie("restaurants", delimitedString);
-    this.inputData = "";
+    if (this.inputData) {
+      this.items.push(this.inputData);
+      const delimitedString = this.items.join(', ');
+      this.cookieService.saveDataToCookie("restaurants", delimitedString);
+      this.inputData = "";
+    } else {
+      alert("Please enter a restaurant name before clicking 'Add'");
+    }
+  }
+
+  tellMeWhereToEat() {
+    const randomIndex = Math.floor(Math.random() * this.items.length);
+    this.chosenRestaurant = this.items[randomIndex];
   }
 
 }
