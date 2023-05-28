@@ -4,8 +4,8 @@
             <li *ngFor="let item of items">{{ item }}</li>
         </ul>
         <div class="add-item-container">
-            <input class="input-field">
-            <button class="rounded-button">Press Me</button>
+            <input type="text" [(ngModel)]="inputData" placeholder="Enter a restaurant" class="input-field">
+            <button (click)="onClick()" class="rounded-button">Add</button>
         </div>
 
     </div>

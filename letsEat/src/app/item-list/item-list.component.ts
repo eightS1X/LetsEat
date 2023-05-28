@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ItemListComponent {
   items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  inputData: string = "";
+
+  onClick() {
+    this.items.push(this.inputData);
+    this.inputData = "";
+  }
+
 }
