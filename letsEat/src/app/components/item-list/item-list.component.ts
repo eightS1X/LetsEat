@@ -11,7 +11,11 @@ export class ItemListComponent {
 
   onClick() {
     this.items.push(this.inputData);
+    const delimitedString = this.items.join(', ');
+    document.cookie = "restaurants=" + delimitedString;
     this.inputData = "";
+
   }
+
 
 }
