@@ -13,15 +13,14 @@ export class RandomizerComponent {
 
   constructor(private cookieService: CookieService) { }
 
-  ngOnInit() {
+  tellMeWhereToEat() {
     if (this.cookieService.checkCookieExists("restaurants")) {
       this.items = this.cookieService.getCookie("restaurants").split(",");
+      const randomIndex = Math.floor(Math.random() * this.items.length);
+      this.chosenRestaurant = this.items[randomIndex];
+    } else {
+      alert("There's nothing to choose from. Add something to the list first.");
     }
-  }
-
-  tellMeWhereToEat() {
-    const randomIndex = Math.floor(Math.random() * this.items.length);
-    this.chosenRestaurant = this.items[randomIndex];
   }
 
 }
