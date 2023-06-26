@@ -9,7 +9,7 @@ import { CookieService } from '../../services/cookie-service/cookie.service';
 export class ItemListComponent {
   items: string[] = [];
   inputData: string = "";
-  chosenRestaurant: string = "";
+
 
   constructor(private cookieService: CookieService) { }
 
@@ -30,9 +30,6 @@ export class ItemListComponent {
     }
   }
 
-  tellMeWhereToEat() {
-    const randomIndex = Math.floor(Math.random() * this.items.length);
-    this.chosenRestaurant = this.items[randomIndex];
-  }
+
 
 }

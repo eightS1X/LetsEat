@@ -1,71 +1,7 @@
-$breakpoint-mobile: 375px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-
 .container {
-    margin: 20px;
-
-    .card {
-
-        ul {
-            list-style-type: none;
-        }
-
-        width: 100%;
-        padding: 15px;
-        background-color: #e0e0e0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease-in-out;
-
-        &__content {
-            text-align: center;
-        }
-
-        @media (min-width: $breakpoint-mobile) {
-            width: 90%;
-            margin: 0 auto 20px;
-        }
-
-        @media (min-width: $breakpoint-tablet) {
-            width: 80%;
-        }
-
-        @media (min-width: $breakpoint-desktop) {
-            width: 50%;
-        }
-    }
 
     .add-item-container {
         text-align: right;
     }
-
-    .input-field {
-        border-radius: 5px;
-        padding: 10px 20px;
-        margin-right: 15px;
-        background-color: #f0f0f0;
-        color: #00082d;
-        border: none;
-    }
-
-    .rounded-button {
-        transition: transform 0.2s ease;
-        border-radius: 5px;
-        padding: 10px 20px;
-        background-color: #337ab7;
-        color: #ffffff;
-        border: none;
-        cursor: pointer;
-    }
-
-    .rounded-button:hover {
-        transform: scale(1.1);
-      }
-      
-      .rounded-button:active {
-        transform: scale(0.9);
-      }
 
 }
