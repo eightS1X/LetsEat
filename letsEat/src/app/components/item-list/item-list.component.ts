@@ -9,7 +9,7 @@ import { CookieService } from '../../services/cookie-service/cookie.service';
 export class ItemListComponent {
   items: string[] = [];
   inputData: string = "";
-
+  selectedFile: File | null = null;
 
   constructor(private cookieService: CookieService) { }
 
@@ -28,6 +28,22 @@ export class ItemListComponent {
     } else {
       alert("Please enter a restaurant name before clicking 'Add'");
     }
+  }
+
+  onFileSelected(event: Event) {
+    const element = event.target as HTMLInputElement;
+    if (element.files) {
+      this.selectedFile = element.files[0];
+    }
+  }
+
+  onSubmit() {
+    if (this.selectedFile) {
+      alert("You selected: " + this.selectedFile.name);
+    } else {
+      alert("No file selected");
+    }
+    
   }
 
 }
