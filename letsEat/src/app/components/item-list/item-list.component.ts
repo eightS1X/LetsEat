@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CookieService } from '../../services/cookie-service/cookie.service';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-item-list',
@@ -39,11 +40,24 @@ export class ItemListComponent {
 
   onSubmit() {
     if (this.selectedFile) {
-      alert("You selected: " + this.selectedFile.name);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const data = reader.result;
+        const workbook = XLSX.read(data, {
+          type: 'binary'
+        });
+
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+
+        console.log(jsonData);
+      };
+
+      reader.readAsBinaryString(this.selectedFile);
     } else {
       alert("No file selected");
     }
-    
   }
 
 }
