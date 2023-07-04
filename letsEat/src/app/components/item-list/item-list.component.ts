@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CookieService } from '../../services/cookie-service/cookie.service';
+import { TempDataLoaderService } from 'src/app/services/temp-data-loader/temp-data-loader.service';
 
 @Component({
   selector: 'app-item-list',
@@ -9,13 +10,16 @@ import { CookieService } from '../../services/cookie-service/cookie.service';
 export class ItemListComponent {
   items: string[] = [];
   inputData: string = "";
-
-
-  constructor(private cookieService: CookieService) { }
+  
+  constructor(private cookieService: CookieService, private dataLoader: TempDataLoaderService) { }
 
   ngOnInit() {
+    this.dataLoader.loadFileContentsIntoCookie('assets/data/lunchlist.csv');
     if (this.cookieService.checkCookieExists("restaurants")) {
       this.items = this.cookieService.getCookie("restaurants").split(",");
+    }
+    if (this.items.length === 0) {
+      location.reload();
     }
   }
 
