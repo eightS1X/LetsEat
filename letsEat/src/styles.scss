@@ -2,6 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #a0cbff;
 }
 
 $breakpoint-mobile: 375px;
@@ -15,6 +16,10 @@ $breakpoint-desktop: 1024px;
 
         ul {
             list-style-type: none;
+        }
+
+        li {
+            padding-top: 8px;
         }
 
         width: 100%;
