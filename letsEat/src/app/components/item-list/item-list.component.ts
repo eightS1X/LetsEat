@@ -14,7 +14,7 @@ export class ItemListComponent {
   constructor(private cookieService: CookieService, private dataLoader: TempDataLoaderService) { }
 
   ngOnInit() {
-    this.dataLoader.loadFileContentsIntoCookie('assets/data/lunchlist.csv');
+    this.dataLoader.loadFileContentsIntoCookie('assets/data/lunchlist.csv', 'restaurants');
     if (this.cookieService.checkCookieExists("restaurants")) {
       this.items = this.cookieService.getCookie("restaurants").split(",");
     }
