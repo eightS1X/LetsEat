@@ -36,8 +36,9 @@ export class CookieService {
     return "";
   }
 
-  saveDataToCookie(cookieName: string, cookieValue: string){
-    document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 7 Sept 2023 12:00:00 UTC";
+  saveDataToCookie(cookieName: string, cookieValue: string) {
+    let encodedCookieValue = encodeURIComponent(cookieValue);
+    document.cookie = cookieName + "=" + encodedCookieValue + "; expires=Thu, 7 Sept 2033 12:00:00 UTC";
   }
 
 }
