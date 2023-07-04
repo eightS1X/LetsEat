@@ -52,6 +52,10 @@ $breakpoint-desktop: 1024px;
         border: none;
     }
 
+    input:focus {
+        outline-color: #a7a7a7; /* Change to your desired color */
+    }
+
     .rounded-button {
         transition: transform 0.2s ease;
         border-radius: 5px;
